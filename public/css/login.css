@@ -1,0 +1,15 @@
+body {
+    background: linear-gradient(0.25turn, #3f87a6, rgba(255, 255, 255, 0.353), #a23cf6);
+
+}
+
+.account {
+    color: #6d6d77;
+    font-weight: 500;
+}
+
+.login-form {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+}
