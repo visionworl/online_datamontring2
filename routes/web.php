@@ -14,8 +14,6 @@ use App\Http\Controllers\admin\admincontroller;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Route::get('/login', [admincontroller::class, 'login'])->name('admin.login');
