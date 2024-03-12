@@ -1,10 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-<<<<<<< HEAD
-=======
 use App\Http\Controllers\admin\admincontroller;
->>>>>>> 5ec4adce5e10ab268ed7012b031cfd3ee2c52cb9
 
 /*
 |--------------------------------------------------------------------------
@@ -17,10 +14,8 @@ use App\Http\Controllers\admin\admincontroller;
 |
 */
 
-<<<<<<< HEAD
 Route::get('/', function () {
     return view('welcome');
 });
-=======
+
 Route::get('/login', [admincontroller::class, 'login'])->name('admin.login');
->>>>>>> 5ec4adce5e10ab268ed7012b031cfd3ee2c52cb9
