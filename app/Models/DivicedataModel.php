@@ -10,9 +10,6 @@ class DivicedataModel extends Model
     use HasFactory;
     protected $table = 'divice_data';
     protected $primaryKey = 'id';
-    protected $fillable = [
-        'pump_title',
-    ];
 
     public function online()
     {
