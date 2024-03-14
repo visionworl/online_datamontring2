@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Edit Online-Montring')
+@section('title', 'Online-Montring-Data')
 
 @section('content')
 
@@ -24,31 +24,37 @@
 
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Edit Online-Montring <span>| new</span></h5>
+                        <h5 class="card-title">Online-Montring-Data <span>| new</span></h5>
                         <hr>
                         <!-- Floating Labels Form -->
-                        <form class="row g-3" method="POST" action="{{route('online.update',['id' => $online->id])}}">
-                            {{-- <form class="row g-3" method="POST" action=""> --}}
+
+                            <form class="row g-3" method="POST" action="{{route('data.createstore')}}" enctype="multipart/form-data">
                             @csrf
-                            @method('PUT')
                             <div class="col-md-3">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="devicename" name="devicename" value="{{$online->devicename}}">
-                                    <label for="devicename">Device_name *</label>
+                                <div class="form-floating mb-3">
+                                    <select class="form-select" id="device_id" aria-label="device_id" name="device_id">
+                                        @if( $online)
+                                        @foreach ( $online as  $online)
+                                            <option value="{{$online->id }}">{{ $online->devicename }}</option>
+                                        @endforeach
+                                        @endif
+                                    </select>
+                                    <label for="user_id"> Device Name </label>
                                 </div>
-                                @error('devicename')
+                                @error('user_id')
                                     <div class="validation-error">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="col-md-3">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="devicelive" name="devicelive" value="{{$online->devicelive}}">
-                                    <label for="devicelive">Device_Live_Data *</label>
+                                    <input type="text" class="form-control" id="d_value" name="d_value" value="{{ old('pump_title') }}">
+                                    <label for="d_value">Device Value </label>
                                 </div>
-                                @error('title')
+                                @error('pump_title')
                                     <div class="validation-error">{{ $message }}</div>
                                 @enderror
                             </div>
+
                             <hr>
                             <div class="text-left">
                                 <button type="submit" class="btn btn-primary">Submit</button>

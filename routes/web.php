@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\registrationController;
 use App\Http\Controllers\online\DataController;
+use App\Http\Controllers\online\DivicedataController;
 
 
 
@@ -28,12 +29,17 @@ Route::get('/customer/title/{title}', [registrationController::class, 'gettitle'
 Route::post('/authenticate', [registrationController::class, 'authenticate'])->name('admin.authenticate');
 Route::post('/logout', [registrationController::class, 'logout'])->name('admin.logout');
 
-//---------------------------- Online Api----------------------------------------------------
+//---------------------------divice_details-----------------------------------------------------
 Route::get('/create', [DataController::class, 'create'])->name('online.create');
 Route::post('/create', [DataController::class, 'store'])->name('online.store');
 Route::get('/show', [DataController::class, 'show'])->name('online.show');
 Route::delete('/online/delete/{id}', [DataController::class, 'delete'])->name('online.delete');
 Route::get('/edit', [DataController::class, 'editonline'])->name('online.edit');
 Route::get('/edit/plan/{id}', [DataController::class, 'edit'])->name('online.edit');
+Route::put('/online/update/{id}', [DataController::class, 'update'])->name('online.update');
 
+//---------------------------divice_data-----------------------------------------------------
+Route::get('/createdata', [DivicedataController::class, 'createdata'])->name('data.createdata');
+Route::post('/createstore', [DivicedataController::class, 'createstore'])->name('data.createstore');
+Route::get('/showdata', [DivicedataController::class, 'showdata'])->name('data.showdata');
 

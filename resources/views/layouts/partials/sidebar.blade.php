@@ -4,34 +4,34 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link @if(Route::currentroutename() == 'user.index') active @endif" href="">
+        <a class="nav-link @if(Route::currentroutename() == 'user.index') active @endif" href="{{route('admin.dashboard')}}">
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
       </li><!-- End Dashboard Nav -->
 
       <li class="nav-item">
-        <a class="nav-link @if(Route::currentroutename() == 'user.pumps') active @endif" href="">
+        <a class="nav-link @if(Route::currentroutename() == 'user.pumps') active @endif" href="{{route('online.show')}}">
           <i class="bi bi-droplet-half"></i>
-          <span>Pumps</span>
+          <span>Online-Data</span>
         </a>
       </li><!-- End Pumps Nav -->
 
 
       <li class="nav-item">
-        <a class="nav-link @if(Route::currentroutename() == 'user.data')) active @endif" href="">
+        <a class="nav-link @if(Route::currentroutename() == 'user.data')) active @endif" href="{{route('data.showdata')}}">
           <i class="bi bi-file-bar-graph"></i>
           <span>Data</span>
         </a>
       </li><!-- End Customer Nav -->
 
-      <li class="nav-item">
+      {{-- <li class="nav-item">
         <a class="nav-link collapsed @if(in_array(Route::currentroutename(), ['user.pump.report','reports.single.pumps.index'])) active @endif" data-bs-target="#reports-nav" data-bs-toggle="collapse" href="#">
             <i class="bi bi-file-earmark-spreadsheet"></i>
             <span>Reports</span>
             <i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="reports-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        </a> --}}
+        {{-- <ul id="reports-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
             <li>
                 <a href="">
                     <i class="bi bi-dice-1"></i>
@@ -39,7 +39,7 @@
                 </a>
             </li>
         </ul>
-    </li>
+    </li> --}}
 
       <li class="nav-item">
         <a class="nav-link" href="{{ route('admin.logout') }}" onclick="event.preventDefault();
