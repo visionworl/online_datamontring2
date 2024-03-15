@@ -39,6 +39,8 @@
                                         <th scope="col">Device Name</th>
                                         <th scope="col">Device Live Data</th>
                                         <th scope="col">Device Installation </th>
+                                        <th scope="col">Action </th>
+
 
                                     </tr>
                                 </thead>
@@ -52,13 +54,13 @@
                                                 <td>{{ date('M d Y', strtotime($online->created_at)) }}</td>
 
                                                 <td class="action">
-                                                    {{-- <a href="" class="btn btn-info btn-sm">
+                                                    <a href="" class="btn btn-info btn-sm">
                                                         <i class="bi bi-eye-fill"></i>
-                                                    </a> --}}
+                                                    </a>
                                                     <a href="{{ route('online.edit', ['id' => $online->id]) }}" class="btn btn-primary btn-sm">
                                                         <i class="bi bi-pencil-square"></i>
                                                     </a>
-                                                 
+
                                                    <form method="post" id="delete-form" action="{{ route('online.delete', $online->id) }} ">
                                                         @csrf
                                                         @method('DELETE')

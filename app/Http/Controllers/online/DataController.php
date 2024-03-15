@@ -19,7 +19,7 @@ class DataController extends Controller
         'devicelive' => 'required',
     ]);
     $online = new OnlineDataModel();
-    //dd($plan);
+    //dd($online);
     $online->devicename = $request->input('devicename');
     $online->devicelive = $request->input('devicelive');
     $online->save();
@@ -37,7 +37,7 @@ class DataController extends Controller
         return redirect()->route('online.show');
     }
     $online->delete();
-    return redirect()->route('online.show')->with('delete', 'Online-Montring-Data delete is successfully!');;
+    return redirect()->route('online.show')->with('delete', 'Online-Montring-Data delete is successfully!');
 }
 public function editonline(){
     return view('online.edit');
@@ -47,22 +47,22 @@ public function edit($id)
     $online = OnlineDataModel::find($id);
     return view('online.edit', ['online' => $online]);
 }
-// public function update(Request $request ,$id){
-//     $online =  OnlineDataModel::find($id);
-//     $online->devicename = $request->input('devicename');
-//     $online->devicelive = $request->input('devicelive');
-//     $online->save();
-//     return redirect()->route('online.show');
-
-// }
-
 public function update(Request $request, $id){
     $online =  OnlineDataModel::find($id);
     $online->devicename = $request->input('devicename');
     $online->devicelive = $request->input('devicelive');
-    // dd($online);
+    //dd($online);
     $online->save();
     return redirect()->route('online.show')->with('success', 'Online-Montring-Data is successfully!');
 }
+// public function shows($id)
+// {
+//     $online = OnlineDataModel::find($id);
+//     return view('online.show', compact('online'));
+// }
+  public function shows(){
+        return view('online.showdetails');
+    }
+
 
 }

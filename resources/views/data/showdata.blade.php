@@ -36,8 +36,10 @@
                                 <thead>
                                     <tr>
                                         <th scope="col">#</th>
+                                        <th scope="col">Device name</th>
                                         <th scope="col">Device Value</th>
                                         <th scope="col">Device Data Date</th>
+                                        <th scope="col">Action</th>
 
 
                                     </tr>
@@ -47,18 +49,19 @@
                                         @foreach ($data as $data)
                                             <tr>
                                                 <th scope="row">{{ $loop->index + 1 }}</th>
+                                                <td>{{ $data->online->devicename }}</td>
                                                 <td>{{ $data->d_value }}</td>
                                                 <td>{{ date('M d Y', strtotime($data->created_at)) }}</td>
 
                                                 <td class="action">
-                                                    {{-- <a href="" class="btn btn-info btn-sm">
+                                                    <a href="{{route('data.showdetails',$data->id)}}" class="btn btn-info btn-sm">
                                                         <i class="bi bi-eye-fill"></i>
-                                                    </a> --}}
-                                                    <a href="" class="btn btn-primary btn-sm">
+                                                    </a>
+                                                    <a href="{{route('data.edit',$data->id)}}" class="btn btn-primary btn-sm">
                                                         <i class="bi bi-pencil-square"></i>
                                                     </a>
 
-                                                   <form method="post" id="delete-form" action=" ">
+                                                   <form method="post" id="delete-form" action="{{route('data.delete' ,$data->id)}} ">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="submit" class="btn btn-danger btn-sm">
