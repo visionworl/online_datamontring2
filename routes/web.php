@@ -34,19 +34,15 @@ Route::get('/create', [DataController::class, 'create'])->name('online.create');
 Route::post('/create', [DataController::class, 'store'])->name('online.store');
 Route::get('/show', [DataController::class, 'show'])->name('online.show');
 Route::delete('/online/delete/{id}', [DataController::class, 'delete'])->name('online.delete');
-Route::get('/edit', [DataController::class, 'editonline'])->name('online.edit');
-Route::get('/edit/plan/{id}', [DataController::class, 'edit'])->name('online.edit');
+Route::get('/edit/online/{id}', [DataController::class, 'edit'])->name('online.edit');
 Route::put('/online/update/{id}', [DataController::class, 'update'])->name('online.update');
-// Route::get('/online/showdetails/{id}', [DataController::class, 'shows'])->name('online.showdetails');
-Route::get('/showdetails', [DataController::class, 'shows'])->name('online.showdetails');
+Route::get('/online/showdetails/{id}', [DataController::class, 'shows'])->name('online.showdetails');
 
 //---------------------------divice_data-----------------------------------------------------
 Route::get('/createdata', [DivicedataController::class, 'createdata'])->name('data.createdata');
 Route::post('/createstore', [DivicedataController::class, 'createstore'])->name('data.createstore');
 Route::get('/showdata', [DivicedataController::class, 'showdata'])->name('data.showdata');
-// Route::get('/editdata', [DivicedataController::class, 'dataedit'])->name('data.editdata');
 Route::get('/edit/data/{id}', [DivicedataController::class, 'edit'])->name('data.edit');
 Route::post('/data/update/{id}', [DivicedataController::class, 'update'])->name('data.update');
 Route::delete('/data/delete/{id}', [DivicedataController::class, 'delete'])->name('data.delete');
-// Route::get('/showdetails', [DivicedataController::class, 'shows'])->name('online.showdetails');
 Route::get('/data/showdetails/{id}', [DivicedataController::class, 'shows'])->name('data.showdetails');

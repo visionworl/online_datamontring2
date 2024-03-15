@@ -54,7 +54,7 @@
                                                 <td>{{ date('M d Y', strtotime($online->created_at)) }}</td>
 
                                                 <td class="action">
-                                                    <a href="" class="btn btn-info btn-sm">
+                                                    <a href="{{route('online.showdetails' ,$online->id)}}" class="btn btn-info btn-sm">
                                                         <i class="bi bi-eye-fill"></i>
                                                     </a>
                                                     <a href="{{ route('online.edit', ['id' => $online->id]) }}" class="btn btn-primary btn-sm">

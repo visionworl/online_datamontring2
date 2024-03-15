@@ -24,7 +24,7 @@
 
                 <div class="card">
                     <div class="filter  mr-4">
-                        <a class="btn btn-outline-primary btn-sm" href="">
+                        <a class="btn btn-outline-primary btn-sm" href="{{route('online.edit',$online->id)}}">
                             <i class="bi bi-pencil-square"></i> Edit
                         </a>
                     </div>
@@ -40,16 +40,16 @@
 
                             <div class="col-md-3">
                                 <p class="m-0 text-label">Device Name: </p>
-                                <p class="m-0"></p>
+                                <p class="m-0">{{ $online->devicename }}</p>
                             </div>
 
                             <div class="col-md-3">
                                 <p class="m-0 text-label"> Device Status: </p>
-                                <p class="m-0"></p>
+                                <p class="m-0">{{ $online->devicelive }}</p>
                             </div>
                             <div class="col-md-3">
                                 <p class="m-0 text-label"> Created At: </p>
-                                <p class="m-0"></p>
+                                <p class="m-0">{{ $online->created_at }}</p>
                             </div>
                         </div>
                     </div>
