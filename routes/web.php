@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\registrationController;
 use App\Http\Controllers\online\DataController;
 use App\Http\Controllers\online\DivicedataController;
+use App\Http\Controllers\online\complaintcontroller;
 
 
 
@@ -46,3 +47,7 @@ Route::get('/edit/data/{id}', [DivicedataController::class, 'edit'])->name('data
 Route::post('/data/update/{id}', [DivicedataController::class, 'update'])->name('data.update');
 Route::delete('/data/delete/{id}', [DivicedataController::class, 'delete'])->name('data.delete');
 Route::get('/data/showdetails/{id}', [DivicedataController::class, 'shows'])->name('data.showdetails');
+
+//---------------------------Complaint_data-----------------------------------------------------
+Route::get('/complaint', [complaintcontroller::class, 'create'])->name('complaint.complaint');
+Route::post('/sendEmail', [complaintcontroller::class, 'sendEmail'])->name('complaint.sendEmail');

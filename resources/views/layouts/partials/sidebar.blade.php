@@ -21,9 +21,16 @@
       <li class="nav-item">
         <a class="nav-link @if(Route::currentroutename() == 'user.data')) active @endif" href="{{route('data.showdata')}}">
           <i class="bi bi-file-bar-graph"></i>
-          <span>Data</span>
+          <span>Device-Data</span>
         </a>
-      </li><!-- End Customer Nav -->
+      </li>
+      <li class="nav-item">
+        <a class="nav-link @if(Route::currentroutename() == 'user.data')) active @endif" href="{{route('data.showdata')}}">
+            <i class="bi bi-envelope"></i>
+            <span>Complaint</span>
+        </a>
+      </li>
+      <!-- End Customer Nav -->
 
       {{-- <li class="nav-item">
         <a class="nav-link collapsed @if(in_array(Route::currentroutename(), ['user.pump.report','reports.single.pumps.index'])) active @endif" data-bs-target="#reports-nav" data-bs-toggle="collapse" href="#">

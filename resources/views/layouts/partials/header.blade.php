@@ -11,9 +11,7 @@
 
     <nav class="header-nav ms-auto">
       <ul class="d-flex align-items-center">
-
-
-
+            <a class="btn btn-light" style="margin:0.5cm" href="{{route('complaint.complaint')}}"> Complaint </a>
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">

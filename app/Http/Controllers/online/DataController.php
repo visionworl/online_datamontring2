@@ -39,9 +39,7 @@ class DataController extends Controller
     $online->delete();
     return redirect()->route('online.show')->with('delete', 'Online-Montring-Data delete is successfully!');
 }
-// public function editonline(){
-//     return view('online.edit');
-// }
+
 public function edit($id)
 {
     $online = OnlineDataModel::find($id);
@@ -60,9 +58,4 @@ public function shows($id)
     $online = OnlineDataModel::find($id);
     return view('online.showdetails', compact('online'));
 }
-//   public function shows(){
-//         return view('online.showdetails');
-//     }
-
-
 }

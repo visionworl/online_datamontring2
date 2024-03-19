@@ -34,8 +34,6 @@ class registrationController extends Controller
         $user->user_name = $request->input('user_name');
         $user->email = $request->input('email');
         $user->phone_number = $request->input('phone_number');
-        // $user->password = $request->input('password');
-        // $user->confirm_password = $request->input('confirm_password');
         $user->password = bcrypt($request->input('password'));
         $user->confirm_password = bcrypt($request->input('confirm_password'));
        if( $user->save()){
@@ -44,12 +42,7 @@ class registrationController extends Controller
 
         return redirect()->route('admin.dashboard')->with('success','You are Sucessfully register ');
     }
-    // public function login(  Request $request){
 
-    //     $title = $request->input('title');
-    //     return view('admin.login',compact('title'));
-
-    // }
     public function login()
 {
     $condition = false;
@@ -59,29 +52,7 @@ class registrationController extends Controller
     return view('admin.login', compact('title'));
 }
 
-    // public function gettitle($title)
-    // {
-    //     $response = [];
 
-    //     switch ($title) {
-    //         case 'customer':
-    //             $response['title'] = 'Customer Title';
-    //             $response['action'] = route('admin.authenticate', ['title' => 'customer']);
-    //             break;
-
-    //         case 'admin':
-    //             $response['title'] = 'Admin Title';
-    //             $response['action'] = route('admin.authenticate', ['title' => 'admin']);
-    //             break;
-
-    //         default:
-    //             $response['title'] = 'Unknown Title';
-    //             $response['action'] = route('admin.authenticate', ['title' => 'unknown']);
-    //             break;
-    //     }
-
-    //     return response()->json($response);
-    // }
     public function authenticate(Request $request)
     {
         $request->validate([
