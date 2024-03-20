@@ -51,3 +51,6 @@ Route::get('/data/showdetails/{id}', [DivicedataController::class, 'shows'])->na
 //---------------------------Complaint_data-----------------------------------------------------
 Route::get('/complaint', [complaintcontroller::class, 'create'])->name('complaint.complaint');
 Route::post('/sendEmail', [complaintcontroller::class, 'sendEmail'])->name('complaint.sendEmail');
+Route::get('/showcomplaint', [complaintcontroller::class, 'show'])->name('complaint.showcomplaint');
+Route::delete('/complaint/delete/{id}', [complaintcontroller::class, 'delete'])->name('complaint.delete');
+Route::get('/complaint/viewcomplaint/{id}', [complaintcontroller::class, 'shows'])->name('complaint.viewcomplaint');

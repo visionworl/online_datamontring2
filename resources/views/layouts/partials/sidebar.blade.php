@@ -25,7 +25,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link @if(Route::currentroutename() == 'user.data')) active @endif" href="{{route('data.showdata')}}">
+        <a class="nav-link @if(Route::currentroutename() == 'user.data')) active @endif" href="{{route('complaint.showcomplaint')}}">
             <i class="bi bi-envelope"></i>
             <span>Complaint</span>
         </a>

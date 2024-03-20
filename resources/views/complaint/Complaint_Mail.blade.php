@@ -8,9 +8,9 @@
 </head>
 <body>
    <h1> Complaint email</h1>
-   <p>Name :{{$details['name']}}</p>
-   <p>Name :{{$details['email']}}</p>
-   <p>Name :{{$details['phone']}}</p>
-   <p>Name :{{$details['description']}}</p>
+   <p>Name: {{ $details['name'] }}</p>
+   <p>Email: {{ $details['email'] }}</p>
+   <p>Phone: {{ $details['phone'] }}</p>
+   <p>Description: {{ $details['description'] }}</p>
 </body>
 </html>
